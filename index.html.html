@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gainsboro Group | Executive Search</title>
+  <style>
+    :root {
+}
+.bottom-strip {
+  height: 8px;
+  background: #5a0f1c;
+}
+:root {
+.top-strip {
+  height: 8px;
+  background: #5a0f1c;
+}
+
+      --background: #ffffff;
+      --foreground: #1f2937;
+      --muted: #667085;
+      --border: #e5e7eb;
+      --card: #f4f7fb;
+      --secondary: #eef3f9;
+      --primary: #5a0f1c;
+      --primary-foreground: #ffffff;
+      --accent: #0f3f7a;
+      --max-width: 1152px;
+      --radius: 0px;
+      --shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .page {
+      min-height: 100vh;
+      background: var(--background);
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      letter-spacing: -0.01em;
+    }
+    h2.serif {
+  color: #5a0f1c;
+
+      color: var(--primary);
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      padding: 28px 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 120px !important;
+      height: auto !important;
+      max-width: none !important;
+
+      width: 56px;
+      height: 28px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      min-width: 0;
+    }
+
+    .brand-name {
+      font-size: 20px;
+      color: var(--foreground);
+      white-space: nowrap;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 2px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+
+      font-size: 16px !important;
+
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--foreground);
+    }
+
+    .hero {
+      position: relative;
+      padding: 110px 0 92px;
+      background: linear-gradient(180deg, #e8f1ff 0%, #ffffff 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 760px);
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.04;
+      color: var(--foreground);
+      max-width: 920px;
+      font-weight: 400;
+    }
+
+    .hero p {
+      margin: 28px 0 0;
+      max-width: 720px;
+      font-size: 20px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      margin-top: 44px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border-radius: 6px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 14px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      border: 1px solid #d6e4ff;
+      color: var(--foreground);
+      background: transparent;
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      border-color: #d8e3f0;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #5a0f1c, #0f3f7a);
+      border: none;
+
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border-color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(0.97);
+      background: var(--primary);
+    }
+
+    section {
+      padding: 88px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.12;
+      color: var(--foreground);
+      font-weight: 400;
+    }
+
+    .lead {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.85;
+      max-width: 760px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 32px;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .icon {
+      color: #1f4e8c;
+
+      width: 44px;
+      height: 44px;
+      background: var(--secondary);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      border: 1px solid #d6e4ff;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .feature h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--foreground);
+    }
+
+    .feature p {
+      margin: 8px 0 0;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .cards-3 {
+      margin-top: 58px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #ffffff 0%, var(--card) 100%);
+      border: 1px solid #d6e4ff;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .card .icon {
+      color: #1f4e8c;
+
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 600;
+    }
+
+    .card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .process-grid {
+      margin-top: 58px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 44px;
+    }
+
+    .process-step {
+      position: relative;
+      min-height: 150px;
+    }
+
+    .step-num {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 48px;
+      color: #d5d9df;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .process-step h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .process-step p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .about-box {
+      background: linear-gradient(180deg, #ffffff 0%, var(--card) 100%);
+      border: 1px solid #d6e4ff;
+      padding: 32px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      background: var(--secondary);
+      border: 1px solid #d6e4ff;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: var(--foreground);
+    }
+
+    .focus-list {
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      gap: 12px;
+    }
+
+    .focus-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex: 0 0 auto;
+    }
+
+    .contact-grid {
+      margin-top: 52px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .contact-card {
+      background: linear-gradient(180deg, #ffffff 0%, var(--card) 100%);
+      border: 1px solid #d6e4ff;
+      padding: 30px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-card h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .contact-card .value,
+    .contact-card a {
+      margin-top: 6px;
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .contact-card a:hover {
+      color: var(--foreground);
+    }
+
+    .footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.9);
+    }
+
+    .footer-inner {
+      padding: 60px 0 28px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      text-decoration: none;
+      color: inherit;
+      display: inline-flex;
+      flex-direction: column;
+    }
+
+    .footer-brand .brand-name {
+      color: white;
+      font-size: 22px;
+    }
+
+    .footer-brand .brand-sub {
+      color: rgba(255,255,255,0.72);
+      margin-top: 4px;
+    }
+
+    .footer-copy {
+      margin-top: 18px;
+      max-width: 480px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .footer-nav a {
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-nav a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.18);
+      font-size: 13px;
+      color: rgba(255,255,255,0.72);
+    }
+
+    @media (max-width: 980px) {
+      .split,
+      .cards-3,
+      .process-grid,
+      .contact-grid,
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .header-inner {
+      padding: 28px 0;
+
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 86px 0 76px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 28px));
+      }
+
+      .brand-name {
+        white-space: normal;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+      border-radius: 6px;
+
+        width: 100%;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-strip"></div>
+  <div class="page">
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="#top">
+          <img class="brand-logo" src="data:image/png;base64,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" alt="Gainsboro Group logo" />
+          <span class="brand-text">
+            <span class="brand-name serif">Gainsboro Group</span>
+            <span class="brand-sub">Executive Search</span>
+          </span>
+        </a>
+
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#employers">Employers</a>
+          <a href="#candidates">Candidates</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+<div class="bottom-strip"></div>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Boutique Executive Search</div>
+            <h1 class="serif">Executive Search for Apparel, Accessories & Licensed Consumer Products</h1>
+            <p>Gainsboro Group is a boutique search firm focused on placing talent across apparel, fashion, accessories, and consumer goods.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Get in Touch</a>
+              <a class="btn" href="#process">Our Process</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="candidates">
+        <div class="container">
+          <div class="split">
+            <div>
+              <div class="section-label">For Candidates</div>
+              <h2 class="serif">Advancing careers in licensed and branded products</h2>
+              <div class="lead">
+                Gainsboro Group works with professionals across consumer products, apparel, and fashion. We take a selective approach to introductions, ensuring alignment with your experience and long-term goals.
+              </div>
+            </div>
+
+            <div class="feature-list">
+              <div class="feature">
+                <div class="icon">✓</div>
+                <div>
+                  <h3>Selective Approach</h3>
+                  <p>We focus on opportunities that are relevant to your background, capabilities, and long-term direction.</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="icon">◎</div>
+                <div>
+                  <h3>Industry Focus</h3>
+                  <p>Our work centers on consumer products, apparel, fashion, and related categories with an emphasis on roles.</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="icon">↗</div>
+                <div>
+                  <h3>Career Alignment</h3>
+                  <p>We make introductions selectively, with an eye toward fit, relevance, and long-term potential.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="employers" style="background: linear-gradient(180deg, #dbe8ff 0%, #f4f8ff 100%);">
+        <div class="container">
+          <div style="max-width: 760px;">
+            <div class="section-label">For Employers</div>
+            <h2 class="serif">Access top talent through an established industry network</h2>
+            <div class="lead">
+              Gainsboro Group operates through an established industry network, providing access to referrals, introductions, and market intelligence. We also reach out directly to top professionals already operating in relevant roles, ensuring access to high-quality talent.
+            </div>
+          </div>
+
+          <div class="cards-3">
+            <div class="card">
+              <div class="icon">◫</div>
+              <h3>Established Network</h3>
+              <p>Access to referrals, trusted introductions, and market insight through long-standing industry relationships.</p>
+            </div>
+
+            <div class="card">
+              <div class="icon">⌕</div>
+              <h3>Direct Outreach</h3>
+              <p>We engage proven professionals already operating in relevant roles and channels across the market.</p>
+            </div>
+
+            <div class="card">
+              <div class="icon">○</div>
+              <h3>Clear Alignment</h3>
+              <p>We focus on presenting a select group of candidates with strong alignment to the role, business, and culture.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="container">
+          <div style="max-width: 760px;">
+            <div class="section-label">How We Work</div>
+            <h2 class="serif">A process built on relationships and direct outreach</h2>
+            <div class="lead">
+              Our approach combines market knowledge, established relationships, and targeted outreach to deliver candidates with clear alignment.
+            </div>
+          </div>
+
+          <div class="process-grid">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <h3>Define the Role</h3>
+              <p>We work closely with you to understand the position, objectives, and organizational fit.</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <h3>Leverage the Network</h3>
+              <p>Established relationships provide access to referrals, recommendations, and market intelligence.</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <h3>Direct Outreach</h3>
+              <p>We proactively engage professionals already operating in relevant roles across your target market.</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <h3>Present Candidates</h3>
+              <p>A select group of candidates is presented with clear alignment to your requirements and culture.</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-num">05</div>
+              <h3>Support Through Completion</h3>
+              <p>We guide the process through interviews, offer negotiation, and successful completion.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" style="background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);">
+        <div class="container">
+          <div class="split">
+            <div>
+              <div class="section-label">About</div>
+              <h2 class="serif">Boutique executive search with deep industry focus</h2>
+              <div class="lead">
+                Gainsboro Group is a boutique executive search firm focused on consumer products, apparel, fashion, and related industries.
+              </div>
+              <div class="lead" style="margin-top: 18px;">
+                We work with companies to identify and engage professionals who already operate within their core channels, including wholesale, Amazon, and key accounts.
+              </div>
+            </div>
+
+            <div class="about-box">
+              <h3 style="margin: 0; font-size: 18px; font-weight: 600;">Industries We Serve</h3>
+              <div class="pill-list">
+                <div class="pill">Consumer Products</div>
+                <div class="pill">Apparel &amp; Fashion</div>
+                <div class="pill">Accessories</div>
+                <div class="pill">Licensed Products</div>
+                <div class="pill">Branded Goods</div>
+                <div class="pill">Adjacent Categories</div>
+              </div>
+
+              <div class="focus-list">
+                <div class="focus-item"><span class="dot"></span>Sales Leadership</div>
+                <div class="focus-item"><span class="dot"></span>Talent</div>
+                <div class="focus-item"><span class="dot"></span>Key Account Management</div>
+                <div class="focus-item"><span class="dot"></span>Channel Development</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div style="max-width: 760px;">
+            <div class="section-label">Contact</div>
+            <h2 class="serif">Let’s start a conversation</h2>
+            <div class="lead">
+              Whether you are a candidate exploring new opportunities or an employer seeking talent, we welcome the opportunity to connect.
+            </div>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="contact-row">
+                <div class="icon">☎</div>
+                <div>
+                  <h3>Phone</h3>
+                  <a class="value" href="tel:+12019069496">Ari: (201) 906-9496<br/>Debbi: (201) 446-8523</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-row">
+                <div class="icon">✉</div>
+                <div>
+                  <h3>Email</h3>
+                  <a href="mailto:ari@gainsbororecruiting.com">ari@gainsbororecruiting.com</a><br />
+                  <a href="mailto:debbi@gainsbororecruiting.com">debbi@gainsbororecruiting.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <div>
+            <a class="footer-brand" href="#top">
+              <span class="brand-name serif">Gainsboro Group</span>
+              <span class="brand-sub">Executive Search for Consumer Products Companies</span>
+            </a>
+            <div class="footer-copy">
+              A boutique search firm focused on placing talent across apparel, fashion, accessories, and consumer goods.
+            </div>
+          </div>
+
+          <nav class="footer-nav">
+            <a href="#about">About</a>
+            <a href="#employers">Employers</a>
+            <a href="#candidates">Candidates</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">© 2026 Gainsboro Group. All rights reserved.</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
